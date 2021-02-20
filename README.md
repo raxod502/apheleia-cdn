@@ -21,4 +21,22 @@ this repository, if they ever need to be updated.
     --fast --resolver lts-16.25 brittany
 ```
 
-Extract the binary from `/usr/local/bin`.
+Extract the binary from `/usr/local/bin`. NB:
+
+* It requires `libtinfo5` to be installed at runtime
+* Using older resolver else Brittany fails to build
+
+### ocamlformat
+
+```
+% curl -fsSL --output install.sh \
+    https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh
+% chmod +x install.sh
+% echo "" | ./install.sh
+% opam init --disable-sandboxing -y
+% opam install --destdir=/usr/local -y ocamlformat
+```
+
+Extract the binary from `/usr/local/bin`. NB:
+
+* `echo` handles the unremoveable prompt from the install script
