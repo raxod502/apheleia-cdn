@@ -13,18 +13,20 @@ this repository, if they ever need to be updated.
 ### Brittany
 
 ```
-% apt update
-% apt install libtinfo-dev
-% export STACK_ROOT="/usr/local/.stack"
-% curl -fsSL https://get.haskellstack.org/ | sh
-% stack --stack-root "$STACK_ROOT" install --local-bin-path /usr/local/bin \
-    --fast --resolver lts-16.25 brittany
+% apt install zlib-dev
+% apt install cabal-install
+% cabal update
+% cabal install Cabal cabal-install
+% export PATH="$HOME/.cabal/bin:$PATH"
+% cabal install brittany --installdir=/usr/local/bin --install-method=copy --overwrite-policy=always
 ```
 
 Extract the binary from `/usr/local/bin`. NB:
 
-* It requires `libtinfo5` to be installed at runtime
-* Using older resolver else Brittany fails to build
+* Runtime dependency on GHC because it needs to read
+  `/usr/lib/ghc/settings` for some reason
+* This needs to be built in the same environment as it will run in,
+  because of ridiculous dynamic linking shenanigans
 
 ### ocamlformat
 
