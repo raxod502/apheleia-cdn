@@ -1,9 +1,13 @@
-# Apheleia CDN
+# DEPRECATED: Apheleia CDN
 
-This repository contains assets hosted for
-[Apheleia](https://github.com/raxod502/apheleia). This is so that code
-formatters without binary downloads available can be installed quickly
+This repository previously contained assets hosted for
+[Apheleia](https://github.com/raxod502/apheleia). This was so that code
+formatters without binary downloads available could be installed quickly
 during CI runs for Apheleia.
+
+However, I solved that problem in a different way by setting CI to only
+test changed formatters on PRs. See <https://github.com/raxod502/apheleia/pull/72>.
+As a consequence, this repository is now obsolete.
 
 ## Maintenance
 
